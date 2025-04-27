@@ -1,0 +1,230 @@
+/* ========== 🎨 BASE STYLES & TYPOGRAPHY 🎨 ========== */
+/* Core text and list styles for general content (e.g., link descriptions, agendas) */
+.gradient-text {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.emoji-list {
+  list-style: none;
+  padding-left: 0;
+}
+.emoji-list li {
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.emoji-list li::before {
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+}
+
+.staggered-list li {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+.staggered-list li:nth-child(1) { animation-delay: 0.1s; }
+.staggered-list li:nth-child(2) { animation-delay: 0.3s; }
+.staggered-list li:nth-child(3) { animation-delay: 0.5s; }
+
+/* ========== 🖼️ CARDS & CONTAINERS 🖼️ ========== */
+/* Structural components for link cards, schedules, etc. (core to your site) */
+.hover-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-border-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+}
+.gradient-border-card::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border-radius: 12px;
+  z-index: -1;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 30px;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to bottom, #6a11cb, #2575fc);
+}
+.timeline-item::after {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #6a11cb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========== 🔥 BUTTONS & LINKS 🔥 ========== */
+/* Interactive elements for calls-to-action (e.g., photo upload, navigation) */
+.glow-button {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+  transition: all 0.3s ease;
+}
+.glow-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.6);
+}
+
+.underline-link {
+  text-decoration: none;
+  color: #2575fc;
+  position: relative;
+}
+.underline-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2575fc;
+  transition: width 0.3s ease;
+}
+.underline-link:hover::after {
+  width: 100%;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(106, 17, 203, 0.3);
+  animation: bounce 2s infinite;
+}
+
+/* ========== 🌟 BACKGROUNDS & BADGES 🌟 ========== */
+/* Visual effects for backgrounds and indicators (e.g., live events, VIP badges) */
+.gradient-bg {
+  background: linear-gradient(270deg, #ffd700, #ff8c00, #ff4500);
+  background-size: 600% 600%;
+  animation: gradientBG 10s ease infinite;
+}
+
+.diagonal-stripe {
+  background: linear-gradient(45deg, 
+    rgba(106, 17, 203, 0.1) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(106, 17, 203, 0.1) 50%, 
+    rgba(106, 17, 203, 0.1) 75%, 
+    transparent 75%);
+  background-size: 20px 20px;
+}
+
+.live-badge {
+  background: #ff4757;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+/* ========== 🎥 SPECIAL EFFECTS 🎥 ========== */
+/* Advanced visuals for less critical components (e.g., testimonials, icons) */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floating-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.testimonial-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.testimonial-dots .dot.active {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  transform: scale(1.2);
+}
+
+/* ========== 🔄 ANIMATIONS 🔄 ========== */
+/* All keyframe animations grouped for reference */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
